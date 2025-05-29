@@ -58,5 +58,5 @@ def cadastrar():
             
             print("Cadastro efetuado com sucesso! Efetuando login.")
             efetuado = True
-            return efetuado
+            return efetuado # retorna valor booleano para já funcionar com a lógica do main
 
