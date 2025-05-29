@@ -17,10 +17,18 @@ class User:
 def gerador_id(size=9, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
-def login(user, password): # a fazer
+def login(): # a fazer
     efetuado = False
     while not efetuado:
-        cpf = int(input("Insira seu CPF. Não utilize pontos e traços."))
+        cpf = input("Insira seu CPF. Não utilize pontos e traços.")
+        if cpf in usuarios_cadastrados:
+            usuario = usuarios_cadastrados[cpf]
+            senha = input("Insira sua senha.")
+            if senha == usuario.password:
+                efetuado = True
+            else:
+                pass
+
 
 # cadastro
 def cadastrar():
