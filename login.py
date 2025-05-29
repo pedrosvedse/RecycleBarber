@@ -18,14 +18,16 @@ def gerador_id(size=9, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
 def login(user, password): # a fazer
-    pass
+    efetuado = False
+    while not efetuado:
+        cpf = int(input("Insira seu CPF. Não utilize pontos e traços."))
 
 # cadastro
 def cadastrar():
     efetuado = False
     while efetuado != True:
         try:
-            cpf = int(input("Insira seu CPF. Não utilize números."))
+            cpf = int(input("Insira seu CPF. Não utilize pontos e traços."))
         except:
             print("Erro: CPF inválido. Por favor, tente novamente.")
         else:
