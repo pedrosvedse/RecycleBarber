@@ -3,7 +3,7 @@ import login
 registrado = False
 
 while not registrado:
-    print("Seja bem-vindo ao Vice Manager.")
+    print("Seja bem-vindo ao Recycle Barber.")
     print("------------------")
     print("Selecione uma opção:")
     print("1 - Entrar com sua conta.")
@@ -13,12 +13,15 @@ while not registrado:
     
     opt = input("")
 
-    try:
-        if opt == "1":
-            pass
-        elif opt == "2":
-            pass
-        else:
-            break
-    except:
-        print("Ocorreu um erro inesperado. Tente novamente!\n")
+    #try:
+    if opt == "1":
+        pass
+    elif opt == "2":
+        try:
+            registrado = login.cadastrar()
+        except:
+            print("Ocorreu um erro inesperado, tente se cadastrar novamente.")
+    else:
+        break
+    #except:
+        #print("Ocorreu um erro inesperado. Tente novamente!\n")
