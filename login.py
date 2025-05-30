@@ -46,7 +46,7 @@ def cadastrar():
             username = input("Nome do empresário: ")
             email = input("E-mail da empresa: ").lower() # converte o e-mail em letras minúsculas
             password = input("Insira a sua senha: ")
-
+            
             confirm_password = "" # confirmação de senha
             while confirm_password != password:
                 confirm_password = input("Confirme sua senha: ")
@@ -77,20 +77,6 @@ def cadastrar():
             
             print("Cadastro efetuado com sucesso! Efetuando login...")
             
-            endereco = {
-                "UF": input("Estado: "),
-                "cidade": input("Cidade: "),
-                "bairro": input("Bairro: "),
-                "CEP": input("CEP: "),
-                "rua": input("Rua: "),
-                "numero": input("Número: "),
-                "complemento": input("Complemento:")
-            }
-            
-            new_user = User(cpf, nome_empresa, username, email, password, endereco)
-            usuarios_cadastrados[str(cpf)] = new_user
-            
-            print("Cadastro efetuado com sucesso! Efetuando login.")
             efetuado = True
             return efetuado # retorna valor booleano para já funcionar com a lógica do main
 
