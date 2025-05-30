@@ -13,19 +13,6 @@ class User:
         self.password = password
         self.endereco = endereco
 
-
-def login(): # a fazer
-    efetuado = False
-    while not efetuado:
-        cpf = input("Insira seu CPF.")
-        if cpf in usuarios_cadastrados:
-            usuario = usuarios_cadastrados[cpf]
-            senha = input("Insira sua senha.")
-            if senha == usuario.password:
-                efetuado = True
-            else:
-                pass
-
 def login(): # a fazer
     efetuado = False
     while not efetuado:
