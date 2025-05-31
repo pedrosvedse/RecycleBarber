@@ -13,6 +13,7 @@ class User:
         self.password = password
         self.endereco = endereco
 
+# login
 def login(): # a fazer
     efetuado = False
     while not efetuado:

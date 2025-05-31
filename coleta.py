@@ -14,3 +14,8 @@
 #- acompanhar coleta
 #- finalizar coleta
 #- cancelar coleta
+import string
+import random
+
+def gerador_id(size=9, chars=string.ascii_uppercase + string.digits):
+    return ''.join(random.choice(chars) for _ in range(size))

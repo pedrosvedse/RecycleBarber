@@ -25,3 +25,8 @@ while not registrado:
         break
     #except:
         #print("Ocorreu um erro inesperado. Tente novamente!\n")
+        
+        
+# loop principal, após fazer login
+while registrado:
+    pass # a fazer
