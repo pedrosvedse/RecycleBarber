@@ -1,14 +1,5 @@
 # A FAZER:
 
-# criar classe de solicitação de coleta
-#- ID da solicitação
-#- barbearia que solicitou
-#- id do parceiro
-#- data da solictiação
-#- tipos de resíduo
-#- status da coleta
-#- data prevista para a colete
-
 # funções para solicitação:
 #- solicitar coleta (cria um novo objeto de solicitação de coleta)
 #- acompanhar coleta
@@ -16,6 +7,25 @@
 #- cancelar coleta
 import string
 import random
+import datetime 
+
+class Coleta:
+    def __init__(self,id,solicitante,data_solicitacao,data_prevista,residuos,status)
+        self.id = id
+        self.solicitante = solicitante
+        self.data_solicitacao = data_solicitacao
+        self.data_prevista = data_prevista
+        self.residuos = residuos
+        self.status = status
+        
 
 def gerador_id(size=9, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
+
+def solicitar_coleta(solicitante):
+    id = gerador_id()
+    barbeiro = solicitante 
+    data_solicitacao = datetime.datetime.now()
+    data_prevista = datetime.datetime.now()
+    coleta = Coleta(id,barbeiro,data_solicitacao,data_prevista)    
+    return coleta                                                                                            
