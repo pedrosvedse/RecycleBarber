@@ -193,4 +193,4 @@ print("\n--- Passo 1: Solicitação de Coletas ---")
     if coleta_barbeiro1_a: 
         acompanhar_coleta(coleta_barbeiro1_a.id_coleta)
 
-      
+      acompanhar_coleta("COLETA-IDQUE NAOEXISTE")
