@@ -172,3 +172,9 @@ print("\n--- Relatório Geral de Status das Coletas ---")
         num_coletas_categoria = len(dict_coletas_na_categoria)
         print(f" Coletas {categoria_nome.capitalize()}: {num_coletas_categoria}")
         total_geral_coletas += num_coletas_categoria
+
+        if total_geral_coletas == 0:
+        print(" Nenhuma coleta registrada no sistema ainda.")
+    else:
+        print(f"  ------------------------------------------")
+        print(f"  Total de coletas registradas: {total_geral_coletas}")
