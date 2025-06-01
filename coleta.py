@@ -219,6 +219,7 @@ print("\n--- Passo 6: Cancelar Coletas ---")
         cancelar_coleta(coleta_barbeiro1_b.id_coleta) # Já cancelada
     if coleta_barbeiro1_a: # coleta_barbeiro1_a foi finalizada
         cancelar_coleta(coleta_barbeiro1_a.id_coleta)
-        
+
 print("\n--- Passo 7: Relatório Geral de Status ---")
     relatorio_status_coletas()
+ print("\n--- Passo 8: Histórico Completo por Barbeiro ---")
