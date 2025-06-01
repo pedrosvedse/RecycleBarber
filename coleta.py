@@ -223,3 +223,6 @@ print("\n--- Passo 6: Cancelar Coletas ---")
 print("\n--- Passo 7: Relatório Geral de Status ---")
     relatorio_status_coletas()
  print("\n--- Passo 8: Histórico Completo por Barbeiro ---")
+
+ for id_barbeiro in barbeiros_cadastrados:
+        listar_coletas_por_barbeiro(id_barbeiro)
