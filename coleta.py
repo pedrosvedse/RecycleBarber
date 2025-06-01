@@ -210,3 +210,6 @@ print("\n--- Passo 1: Solicitação de Coletas ---")
     print("\n--- Passo 5: Finalizar Coletas ---")
     if coleta_barbeiro1_a:
         finalizar_coleta(coleta_barbeiro1_a.id_coleta, "Material recolhido pelo coletor Equipe Alpha.")
+        
+if coleta_barbeiro1_a:
+        finalizar_coleta(coleta_barbeiro1_a.id_coleta)
