@@ -36,4 +36,4 @@ while id_nova_coleta in id_coletas ["ativo"] or
       id _nova_coleta in sistema_coletas["cancelado"]:
     id_nova_coleta = "COLETA-" + gerador_id()
 
-   
+   data_solicitacao_atual = datetime.datetime.now()
