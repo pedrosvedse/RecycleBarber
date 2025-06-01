@@ -85,3 +85,14 @@ sistema_coletas["ativas"][id_nova_coleta] = nova_coleta_obj
         return None
     def finalizar_coleta(id_coleta_para_finalizar): 
     print(f"\n--- Finalizando Coleta ID: {id_coleta_para_finalizar} ---")
+    coleta_encontrada = acompanhar_coleta(id_coleta_para_finalizar)
+    if coleta_encontrada is None:
+        print(" Coleta não encontrada. Verifique o ID e tente novamente.")
+        return None
+    if coleta_encontrada.status == "concluida":
+        print(" Esta coleta já foi finalizada anteriormente.")
+        return None
+        
+    if coleta_obj.status in ["solicitada", "agendada", "em_andamento"]:
+            coleta_obj.atualizar_status("concluida", observacao_final)
+            coleta_obj.data_finalizacao = datetime.datetime.now()
