@@ -83,3 +83,5 @@ sistema_coletas["ativas"][id_nova_coleta] = nova_coleta_obj
     else:
         print(f" Coleta com ID '{id_coleta_para_buscar}' não encontrada no sistema.")
         return None
+    def finalizar_coleta(id_coleta_para_finalizar): 
+    print(f"\n--- Finalizando Coleta ID: {id_coleta_para_finalizar} ---")
