@@ -34,7 +34,7 @@ id_nova_coleta + "COLETA-" + gerador_id()
 while id_nova_coleta in id_coletas ["ativo"] or
       id_nova_nova_coleta in sistema_coletas["finalizado"]:
       id _nova_coleta in sistema_coletas["cancelado"]:
-    id_nova_coleta = "COLETA-" + gerador_id()
+      id_nova_coleta = "COLETA-" + gerador_id()
 
    data_solicitacao_atual = datetime.datetime.now()
 
@@ -52,5 +52,10 @@ sistema_coletas["ativas"][id_nova_coleta] = nova_coleta_obj
     print(f"\n✅ Coleta {id_nova_coleta} solicitada com sucesso para '{barbeiro_nome}' (ID: {solicitante_id}).")
     print(f"   Data prevista para coleta: {data_prevista_coleta.strftime('%d/%m/%Y %H:%M')}.")
     return nova_coleta_obj
-    
+
     def acompanhar_coleta(id_coleta_para_buscar):
+     print(f"\n--- Acompanhando Coleta ID: {id_coleta_para_buscar} ---")
+    coleta_encontrada = None
+    categoria_encontrada = None
+    
+    for categoria in sistema_coletas:
