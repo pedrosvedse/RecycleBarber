@@ -28,4 +28,10 @@ def solicitar_coleta(solicitante):
     data_solicitacao = datetime.datetime.now()
     data_prevista = datetime.datetime.now()
     coleta = Coleta(id,barbeiro,data_solicitacao,data_prevista)    
-    return coleta                                                                                                      id_nova_coleta in sistema_coletas["canceladas"]:
+    return coleta   
+    
+while id_nova_coleta in sistema_coletas["ativas"] or \
+          id_nova_coleta in sistema_coletas["finalizadas"] or \
+          id_nova_coleta in sistema_coletas["canceladas"]:
+        id_nova_coleta = "COLETA-" + gerador_id(6)
+        
