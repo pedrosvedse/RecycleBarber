@@ -113,7 +113,12 @@ sistema_coletas["ativas"][id_nova_coleta] = nova_coleta_obj
         elif id_coleta_para_finalizar in sistema_coletas["canceladas"]:
             print(f"ℹ️ Coleta {id_coleta_para_finalizar} consta como cancelada e não pode ser finalizada.")
         else:
-            print(f"❌ Coleta ativa com ID '{id_coleta_para_finalizar}' não encontrada para finalizar.")
+            print(f" Coleta ativa com ID '{id_coleta_para_finalizar}' não encontrada para finalizar.")
         return False
 
     def cancelar_coleta(id_coleta_para_cancelar):
+    
+    print(f"\n--- 🚫 Tentando Cancelar Coleta ID: {id_coleta_para_cancelar} ---")
+    
+    if id_coleta_para_cancelar in sistema_coletas["ativas"]:
+        coleta_obj = sistema_coletas["ativas"][id_coleta_para_cancelar]
