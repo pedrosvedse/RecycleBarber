@@ -41,14 +41,16 @@ while id_nova_coleta in id_coletas ["ativo"] or
 nova_coleta_obj = Coleta(
         id_coleta=id_nova_coleta,
         solicitante_id=solicitante_id,
-        data_solicitacao=data_solicitacao_atual,
+        data_solicitacao=data_solicitacao_atual
         data_prevista=data_prevista_coleta,
         tipo_residuos=tipo_residuos,
         quantidade_residuos=quantidade_residuos,
         status_inicial="solicitada" 
-        
+
 sistema_coletas["ativas"][id_nova_coleta] = nova_coleta_obj
     barbeiro_nome = barbeiros_cadastrados[solicitante_id]["nome"]
     print(f"\n✅ Coleta {id_nova_coleta} solicitada com sucesso para '{barbeiro_nome}' (ID: {solicitante_id}).")
     print(f"   Data prevista para coleta: {data_prevista_coleta.strftime('%d/%m/%Y %H:%M')}.")
     return nova_coleta_obj
+    
+    def acompanhar_coleta(id_coleta_para_buscar):
