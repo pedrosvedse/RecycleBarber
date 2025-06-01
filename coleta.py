@@ -122,3 +122,5 @@ sistema_coletas["ativas"][id_nova_coleta] = nova_coleta_obj
     
     if id_coleta_para_cancelar in sistema_coletas["ativas"]:
         coleta_obj = sistema_coletas["ativas"][id_coleta_para_cancelar]
+        
+del sistema_coletas["ativas"][id_coleta_para_cancelar]
