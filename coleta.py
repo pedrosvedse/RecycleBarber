@@ -213,3 +213,9 @@ print("\n--- Passo 1: Solicitação de Coletas ---")
 
 print("\n--- Passo 6: Cancelar Coletas ---")
     if coleta_barbeiro1_b:
+    cancelar_coleta(coleta_barbeiro1_b.id_coleta, "Motivo: Cliente não estava presente no local.")
+
+    if coleta_barbeiro1_b:
+        cancelar_coleta(coleta_barbeiro1_b.id_coleta) # Já cancelada
+    if coleta_barbeiro1_a: # coleta_barbeiro1_a foi finalizada
+        cancelar_coleta(coleta_barbeiro1_a.id_coleta)
