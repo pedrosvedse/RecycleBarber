@@ -105,3 +105,13 @@ sistema_coletas["ativas"][id_nova_coleta] = nova_coleta_obj
             print(f" Não foi possível finalizar a coleta {id_coleta_para_finalizar}. Status atual: '{coleta_obj.status}'.")
             print(f" A coleta precisa estar em status 'solicitada', 'agendada' ou 'em_andamento' para ser finalizada.")
             return  False
+
+            else:
+        
+        if id_coleta_para_finalizar in sistema_coletas["finalizadas"]:
+            print(f"ℹ️ Coleta {id_coleta_para_finalizar} já consta como finalizada.")
+        elif id_coleta_para_finalizar in sistema_coletas["canceladas"]:
+            print(f"ℹ️ Coleta {id_coleta_para_finalizar} consta como cancelada e não pode ser finalizada.")
+        else:
+            print(f"❌ Coleta ativa com ID '{id_coleta_para_finalizar}' não encontrada para finalizar.")
+        return False
