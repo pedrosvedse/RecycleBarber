@@ -64,3 +64,7 @@ sistema_coletas["ativas"][id_nova_coleta] = nova_coleta_obj
             coleta_encontrada = sistema_coletas[categoria][id_coleta_para_buscar]
             categoria_encontrada = categoria
             break
+            if coleta_encontrada:
+            
+        print(f"Coleta encontrada na categoria: '{categoria_encontrada.capitalize()}'")
+        print(coleta_encontrada)
