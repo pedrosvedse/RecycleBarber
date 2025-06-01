@@ -226,3 +226,8 @@ print("\n--- Passo 7: Relatório Geral de Status ---")
 
  for id_barbeiro in barbeiros_cadastrados:
         listar_coletas_por_barbeiro(id_barbeiro)
+
+        print("\n🏁 --- Simulação Concluída --- 🏁")
+
+if __name__ == "__main__":
+    executar_simulacao_sistema()
