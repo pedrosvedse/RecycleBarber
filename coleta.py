@@ -160,3 +160,8 @@ if solicitante_id_filtro not in barbeiros_cadastrados:
                       f"Data Prevista: {coleta_atual.data_prevista.strftime('%d/%m/%Y')}, "
                       f"Resíduos: {coleta_atual.tipo_residuos}")
                 idx += 1
+
+                if not encontrou_alguma_coleta:
+        print(f"  ⚪ Nenhuma coleta encontrada para o barbeiro {nome_barbeiro}.")
+
+def relatorio_status_coletas():
