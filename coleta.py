@@ -145,9 +145,11 @@ if solicitante_id_filtro not in barbeiros_cadastrados:
     nome_barbeiro = barbeiros_cadastrados[solicitante_id_filtro]["nome"]
     print(f"\n--- 📜 Histórico de Coletas para o Barbeiro: {nome_barbeiro} (ID: {solicitante_id_filtro}) ---")
     coletas_encontradas = False
-    
+
     for categoria in sistema_coletas:
         for id_coleta, coleta_obj in sistema_coletas[categoria].items():
             if coleta_obj.solicitante == solicitante_id_filtro:
+                if not coletas_encontradas:
+                    print(f"Coletas encontradas para o barbeiro '{nome_barbeiro}':")
                 coletas_encontradas = True
                 print(f"ID: {id_coleta} | Status: {coleta_obj.status} | Data Solicitação: {coleta_obj.data_solicitacao.strftime('%d/%m/%Y %H:%M')} | Data Prevista: {coleta_obj.data_prevista.strftime('%d/%m/%Y %H:%M')}")
