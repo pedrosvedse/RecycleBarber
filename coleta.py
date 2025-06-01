@@ -139,11 +139,11 @@ del sistema_coletas["ativas"][id_coleta_para_cancelar]
 def listar_coletas_por_barbeiro(solicitante_id_filtro):
 
 if solicitante_id_filtro not in barbeiros_cadastrados:
-        print(f"\n⚠️ Barbeiro com ID '{solicitante_id_filtro}' não encontrado no sistema.")
+        print(f"\n Barbeiro com ID '{solicitante_id_filtro}' não encontrado no sistema.")
         return
 
     nome_barbeiro = barbeiros_cadastrados[solicitante_id_filtro]["nome"]
-    print(f"\n--- 📜 Histórico de Coletas para o Barbeiro: {nome_barbeiro} (ID: {solicitante_id_filtro}) ---")
+    print(f"\n--- Histórico de Coletas para o Barbeiro: {nome_barbeiro} (ID: {solicitante_id_filtro}) ---")
     coletas_encontradas = False
 
     for categoria in sistema_coletas:
@@ -165,3 +165,10 @@ if solicitante_id_filtro not in barbeiros_cadastrados:
         print(f"  ⚪ Nenhuma coleta encontrada para o barbeiro {nome_barbeiro}.")
 
 def relatorio_status_coletas():
+print("\n--- Relatório Geral de Status das Coletas ---")
+    total_geral_coletas = 0
+
+    for categoria_nome, dict_coletas_na_categoria in sistema_coletas.items():
+        num_coletas_categoria = len(dict_coletas_na_categoria)
+        print(f" Coletas {categoria_nome.capitalize()}: {num_coletas_categoria}")
+        total_geral_coletas += num_coletas_categoria
