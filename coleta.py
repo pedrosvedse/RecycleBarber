@@ -194,3 +194,12 @@ print("\n--- Passo 1: Solicitação de Coletas ---")
         acompanhar_coleta(coleta_barbeiro1_a.id_coleta)
 
       acompanhar_coleta("COLETA-IDQUE NAOEXISTE")
+
+      print("\n--- Passo 3: Atualização de Status (Ex: Agendamento) ---")
+    if coleta_barbeiro2_a:
+        coleta_para_agendar = sistema_coletas["ativas"].get(coleta_barbeiro2_a.id_coleta)
+        if coleta_para_agendar and coleta_para_agendar.status == "solicitada":
+            nova_data_agendada = datetime.datetime.now() + datetime.timedelta(days=2, hours=4) # Agendar para D+2 às +4h de agora
+            coleta_para_agendar.data_prevista = nova_data_agendada
+            coleta_para_agendar.atualizar_status("agendada", f"Agendado pela central para {nova_data_agendada.strftime('%d/%m/%Y %H:%M')}.")
+            print(f"   Coleta {coleta_para_agendar.id_coleta} atualizada para 'agendada'.")
