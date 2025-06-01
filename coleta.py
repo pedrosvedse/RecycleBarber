@@ -46,3 +46,9 @@ nova_coleta_obj = Coleta(
         tipo_residuos=tipo_residuos,
         quantidade_residuos=quantidade_residuos,
         status_inicial="solicitada" 
+        
+sistema_coletas["ativas"][id_nova_coleta] = nova_coleta_obj
+    barbeiro_nome = barbeiros_cadastrados[solicitante_id]["nome"]
+    print(f"\n✅ Coleta {id_nova_coleta} solicitada com sucesso para '{barbeiro_nome}' (ID: {solicitante_id}).")
+    print(f"   Data prevista para coleta: {data_prevista_coleta.strftime('%d/%m/%Y %H:%M')}.")
+    return nova_coleta_obj
