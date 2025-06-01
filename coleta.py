@@ -92,7 +92,16 @@ sistema_coletas["ativas"][id_nova_coleta] = nova_coleta_obj
     if coleta_encontrada.status == "concluida":
         print(" Esta coleta já foi finalizada anteriormente.")
         return None
-        
+
     if coleta_obj.status in ["solicitada", "agendada", "em_andamento"]:
             coleta_obj.atualizar_status("concluida", observacao_final)
             coleta_obj.data_finalizacao = datetime.datetime.now()
+
+            del sistema_coletas["ativas"][id_coleta_para_finalizar]
+
+            print(f"✅ Coleta {id_coleta_para_finalizar} finalizada com sucesso.")
+            return True
+        else:
+            print(f" Não foi possível finalizar a coleta {id_coleta_para_finalizar}. Status atual: '{coleta_obj.status}'.")
+            print(f" A coleta precisa estar em status 'solicitada', 'agendada' ou 'em_andamento' para ser finalizada.")
+            return  False
