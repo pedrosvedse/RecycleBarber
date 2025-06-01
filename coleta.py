@@ -30,8 +30,10 @@ def solicitar_coleta(solicitante):
     coleta = Coleta(id,barbeiro,data_solicitacao,data_prevista)    
     return coleta   
     
-while id_nova_coleta in sistema_coletas["ativas"] or \
-          id_nova_coleta in sistema_coletas["finalizadas"] or \
-          id_nova_coleta in sistema_coletas["canceladas"]:
-        id_nova_coleta = "COLETA-" + gerador_id(6)
-        
+id_nova_coleta + "COLETA-" + gerador_id()
+while id_nova_coleta in id_coletas ["ativo"] or
+      id_nova_nova_coleta in sistema_coletas["finalizado"]:
+      id _nova_coleta in sistema_coletas["cancelado"]:
+    id_nova_coleta = "COLETA-" + gerador_id()
+
+   
