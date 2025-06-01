@@ -188,3 +188,9 @@ print("\n--- Passo 1: Solicitação de Coletas ---")
     coleta_barbeiro2_a = solicitar_coleta("barbeiro_ABC_007", "Lâminas e navalhas descartadas", "Aproximadamente 200g", dias_para_agendar_padrao=4)
     coleta_barbeiro1_b = solicitar_coleta("barbeiro_XPTO_001", "Material perfurocortante (agulhas de tattoo)", "1 recipiente rígido", dias_para_agendar_padrao=1)
     solicitar_coleta("barbeiro_inexistente_000", "Lixo comum", "1 saco") # Teste de barbeiro não cadastrado
+
+    print("\n--- Passo 2: Acompanhamento de Coletas ---")
+    if coleta_barbeiro1_a: 
+        acompanhar_coleta(coleta_barbeiro1_a.id_coleta)
+
+      
