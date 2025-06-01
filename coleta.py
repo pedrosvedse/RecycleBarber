@@ -203,3 +203,6 @@ print("\n--- Passo 1: Solicitação de Coletas ---")
             coleta_para_agendar.data_prevista = nova_data_agendada
             coleta_para_agendar.atualizar_status("agendada", f"Agendado pela central para {nova_data_agendada.strftime('%d/%m/%Y %H:%M')}.")
             print(f"   Coleta {coleta_para_agendar.id_coleta} atualizada para 'agendada'.")
+
+            print("\n--- Passo 4: Listar Coletas por Barbeiro ---")
+    listar_coletas_por_barbeiro("barbeiro_XPTO_001")
