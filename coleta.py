@@ -178,7 +178,13 @@ print("\n--- Relatório Geral de Status das Coletas ---")
     else:
         print(f"  ------------------------------------------")
         print(f"  Total de coletas registradas: {total_geral_coletas}")
-        
+
 def executar_simulacao_sistema():
     """Função para demonstrar o uso das funcionalidades implementadas."""
     print("🚀 --- Iniciando Simulação do Sistema de Coleta de Lâminas --- 🚀")
+
+print("\n--- Passo 1: Solicitação de Coletas ---")
+    coleta_barbeiro1_a = solicitar_coleta("barbeiro_XPTO_001", "Lâminas de barbear usadas", "1 caixa pequena", dias_para_agendar_padrao=2)
+    coleta_barbeiro2_a = solicitar_coleta("barbeiro_ABC_007", "Lâminas e navalhas descartadas", "Aproximadamente 200g", dias_para_agendar_padrao=4)
+    coleta_barbeiro1_b = solicitar_coleta("barbeiro_XPTO_001", "Material perfurocortante (agulhas de tattoo)", "1 recipiente rígido", dias_para_agendar_padrao=1)
+    solicitar_coleta("barbeiro_inexistente_000", "Lixo comum", "1 saco") # Teste de barbeiro não cadastrado
