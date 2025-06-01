@@ -153,3 +153,10 @@ if solicitante_id_filtro not in barbeiros_cadastrados:
                     print(f"Coletas encontradas para o barbeiro '{nome_barbeiro}':")
                 coletas_encontradas = True
                 print(f"ID: {id_coleta} | Status: {coleta_obj.status} | Data Solicitação: {coleta_obj.data_solicitacao.strftime('%d/%m/%Y %H:%M')} | Data Prevista: {coleta_obj.data_prevista.strftime('%d/%m/%Y %H:%M')}")
+
+                while idx < len(coletas_do_barbeiro_nesta_categoria):
+                coleta_atual = coletas_do_barbeiro_nesta_categoria[idx]
+                print(f"    ID: {coleta_atual.id_coleta}, Status: {coleta_atual.status}, "
+                      f"Data Prevista: {coleta_atual.data_prevista.strftime('%d/%m/%Y')}, "
+                      f"Resíduos: {coleta_atual.tipo_residuos}")
+                idx += 1
