@@ -178,3 +178,7 @@ print("\n--- Relatório Geral de Status das Coletas ---")
     else:
         print(f"  ------------------------------------------")
         print(f"  Total de coletas registradas: {total_geral_coletas}")
+        
+def executar_simulacao_sistema():
+    """Função para demonstrar o uso das funcionalidades implementadas."""
+    print("🚀 --- Iniciando Simulação do Sistema de Coleta de Lâminas --- 🚀")
