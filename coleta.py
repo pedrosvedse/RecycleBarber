@@ -57,5 +57,10 @@ sistema_coletas["ativas"][id_nova_coleta] = nova_coleta_obj
      print(f"\n--- Acompanhando Coleta ID: {id_coleta_para_buscar} ---")
     coleta_encontrada = None
     categoria_encontrada = None
-    
+
     for categoria in sistema_coletas:
+    
+    if id_coleta_para_buscar in sistema_coletas[categoria]:
+            coleta_encontrada = sistema_coletas[categoria][id_coleta_para_buscar]
+            categoria_encontrada = categoria
+            break
