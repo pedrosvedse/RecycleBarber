@@ -135,3 +135,5 @@ del sistema_coletas["ativas"][id_coleta_para_cancelar]
         else:
             print(f"❌ Coleta ativa com ID '{id_coleta_para_cancelar}' não encontrada para cancelar.")
         return False
+        
+def listar_coletas_por_barbeiro(solicitante_id_filtro):
