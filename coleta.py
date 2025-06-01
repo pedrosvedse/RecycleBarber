@@ -115,3 +115,5 @@ sistema_coletas["ativas"][id_nova_coleta] = nova_coleta_obj
         else:
             print(f"❌ Coleta ativa com ID '{id_coleta_para_finalizar}' não encontrada para finalizar.")
         return False
+
+    def cancelar_coleta(id_coleta_para_cancelar):
