@@ -37,3 +37,12 @@ while id_nova_coleta in id_coletas ["ativo"] or
     id_nova_coleta = "COLETA-" + gerador_id()
 
    data_solicitacao_atual = datetime.datetime.now()
+
+nova_coleta_obj = Coleta(
+        id_coleta=id_nova_coleta,
+        solicitante_id=solicitante_id,
+        data_solicitacao=data_solicitacao_atual,
+        data_prevista=data_prevista_coleta,
+        tipo_residuos=tipo_residuos,
+        quantidade_residuos=quantidade_residuos,
+        status_inicial="solicitada" 
