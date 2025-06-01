@@ -49,7 +49,7 @@ nova_coleta_obj = Coleta(
 
 sistema_coletas["ativas"][id_nova_coleta] = nova_coleta_obj
     barbeiro_nome = barbeiros_cadastrados[solicitante_id]["nome"]
-    print(f"\n✅ Coleta {id_nova_coleta} solicitada com sucesso para '{barbeiro_nome}' (ID: {solicitante_id}).")
+    print(f"\n Coleta {id_nova_coleta} solicitada com sucesso para '{barbeiro_nome}' (ID: {solicitante_id}).")
     print(f"   Data prevista para coleta: {data_prevista_coleta.strftime('%d/%m/%Y %H:%M')}.")
     return nova_coleta_obj
 
@@ -68,3 +68,18 @@ sistema_coletas["ativas"][id_nova_coleta] = nova_coleta_obj
             
         print(f"Coleta encontrada na categoria: '{categoria_encontrada.capitalize()}'")
         print(coleta_encontrada)
+
+        if coleta_encontrada.status == "solicitada":
+            print("   ℹ️  Ação: Aguardando agendamento e designação de um coletor.")
+        elif coleta_encontrada.status == "agendada":
+            print("   ℹ️  Ação: Coleta agendada. Aguarde o dia e horário previstos.")
+        elif coleta_encontrada.status == "em_andamento":
+            print("   ℹ️  Ação: A equipe de coleta está a caminho ou realizando a coleta.")
+        elif coleta_encontrada.status == "concluida":
+            print("   ℹ️  Esta coleta já foi concluída com sucesso.")
+        elif coleta_encontrada.status == "cancelada":
+            print("   ℹ️  Esta coleta foi cancelada.")
+        return coleta_encontrada
+    else:
+        print(f" Coleta com ID '{id_coleta_para_buscar}' não encontrada no sistema.")
+        return None
