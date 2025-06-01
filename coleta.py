@@ -135,5 +135,19 @@ del sistema_coletas["ativas"][id_coleta_para_cancelar]
         else:
             print(f"❌ Coleta ativa com ID '{id_coleta_para_cancelar}' não encontrada para cancelar.")
         return False
-        
+
 def listar_coletas_por_barbeiro(solicitante_id_filtro):
+
+if solicitante_id_filtro not in barbeiros_cadastrados:
+        print(f"\n⚠️ Barbeiro com ID '{solicitante_id_filtro}' não encontrado no sistema.")
+        return
+
+    nome_barbeiro = barbeiros_cadastrados[solicitante_id_filtro]["nome"]
+    print(f"\n--- 📜 Histórico de Coletas para o Barbeiro: {nome_barbeiro} (ID: {solicitante_id_filtro}) ---")
+    coletas_encontradas = False
+    
+    for categoria in sistema_coletas:
+        for id_coleta, coleta_obj in sistema_coletas[categoria].items():
+            if coleta_obj.solicitante == solicitante_id_filtro:
+                coletas_encontradas = True
+                print(f"ID: {id_coleta} | Status: {coleta_obj.status} | Data Solicitação: {coleta_obj.data_solicitacao.strftime('%d/%m/%Y %H:%M')} | Data Prevista: {coleta_obj.data_prevista.strftime('%d/%m/%Y %H:%M')}")
